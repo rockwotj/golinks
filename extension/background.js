@@ -1,5 +1,5 @@
 const PROJECT = "<PROJECT>";
-const BASE = "https://.appspot.com/";
+const BASE = "https://" + PROJECT + ".appspot.com/";
 const GO = BASE + "visit?link=";
 const LIST = BASE + "list";
 
