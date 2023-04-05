@@ -1,14 +1,26 @@
 {
-  "name": "Golink Redirector",
-  "description": "Golink redirector chrome extension.",
-  "version": "1.0",
-  "manifest_version": 2,
-  "background": {"scripts":["background.js"]},
-  "browser_action":{},
+  "name": "Golinks",
+  "description": "A simple golink redirector",
+  "version": "3.0",
+  "manifest_version": 3,
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "ruleset",
+      "enabled": true,
+      "path": "rules.json"
+    }]
+  },
+  "action": {
+    "default_title": "Show all golinks"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
   "permissions": [
-    "<all_urls>",
-    "tabs",
-    "webRequest",
-    "webRequestBlocking"
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "*://go/*"
   ]
 }
